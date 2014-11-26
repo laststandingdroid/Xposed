@@ -2,7 +2,7 @@
 #define XPOSED_H_
 
 #define ANDROID_SMP 0
-#include "Dalvik.h"
+//#include "Dalvik.h"
 
 
 namespace android {
