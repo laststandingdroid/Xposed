@@ -11,7 +11,7 @@ LOCAL_SHARED_LIBRARIES := \
 	libutils \
 	libbinder \
 	libandroid_runtime \
-	libdvm \
+	libart \
 	libstlport \
 	libdl
 
