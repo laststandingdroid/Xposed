@@ -16,7 +16,7 @@
 #include <android_runtime/AndroidRuntime.h>
 #include <dlfcn.h>
 
-#if PLATFORM_SDK_VERSION >= 16
+#if PLATFORM_SDK_VERSION >= 20
 #include <sys/personality.h>
 #endif
 
@@ -48,7 +48,7 @@ void initTypePointers()
 
     dlerror();
 
-    if (RUNNING_PLATFORM_SDK_VERSION >= 18) {
+    if (RUNNING_PLATFORM_SDK_VERSION >= 20) {
         *(void **) (&PTR_atrace_set_tracing_enabled) = dlsym(RTLD_DEFAULT, "atrace_set_tracing_enabled");
         if ((error = dlerror()) != NULL) {
             ALOGE("Could not find address for function atrace_set_tracing_enabled: %s", error);
