@@ -79,10 +79,14 @@ void xposedEnforceDalvik() {
         return;
 
     char runtime[PROPERTY_VALUE_MAX];
-    property_get("persist.sys.dalvik.vm.lib", runtime, "");
-    if (strcmp(runtime, "libdvm.so") != 0) {
-        ALOGE("Unsupported runtime library %s, setting to libdvm.so", runtime);
-        property_set("persist.sys.dalvik.vm.lib", "libdvm.so");
+    property_get("persist.sys.art.vm.lib", runtime, "");
+//    property_get("persist.sys.dalvik.vm.lib", runtime, "");
+//    if (strcmp(runtime, "libdvm.so") != 0) {
+        if (strcmp(runtime, "libart.so") != 0) {
+ //       ALOGE("Unsupported runtime library %s, setting to libdvm.so", runtime);
+ //       property_set("persist.sys.dalvik.vm.lib", "libdvm.so");
+         ALOGE("Unsupported runtime library %s, setting to libart.so", runtime);
+        property_set("persist.sys.art.vm.lib", "libart.so");
     }
 }
 
